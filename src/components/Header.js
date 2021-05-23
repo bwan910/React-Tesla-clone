@@ -15,6 +15,7 @@ function Header() {
                 <img src="/images/logo.svg"></img>
             </a>
             <Menu>
+                {/* // Looping data from the redux carSlice.js  */}
                 {cars && cars.map((car, index) =>(
                     <a key={index} href="#">{car}</a>
                  ))}
@@ -86,6 +87,8 @@ const RightMenu = styled.div`
         margin-right: 10px;
         flex-wrap: nowrap;
     }
+
+    
 `
 
 const CustomMenu = styled(MenuIcon)`

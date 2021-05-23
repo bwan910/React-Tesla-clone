@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
 
+// Section for categories in the homepage
+// Here it gets the data from Home.js where the information data are defined
 function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
     return (
         <Wrap bgImage={backgroundImg}>
@@ -12,6 +14,7 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
                 </ItemText>
             </Fade>
             <Buttons>
+                {/*  Fade is the animation from react-reveal  */}
                 <Fade bottom>
                     <ButtonGroup>
                         <LeftButton>
@@ -61,7 +64,8 @@ const ButtonGroup = styled.div`
 `
 
 const LeftButton = styled.div`
-    background-color: rgba(23,26,32,0.8);
+    background-color: black;
+    // background-color: rgba(23,26,32,0.8);
     height: 40px;
     width: 256px;
     color: white;

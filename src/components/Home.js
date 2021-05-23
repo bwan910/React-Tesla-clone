@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Section from './Section'
+import Footer from './Footer';
 
+// In each section passes data to the Section component
 function Home() {
     return (
         <div>
@@ -52,10 +54,12 @@ function Home() {
                     description=""
                     backgroundImg="accessories.jpg"
                     leftBtnText="Shop now"
-                />
 
+                />
+                <Footer></Footer>
             </Container>
-        </div>
+
+        </div >
     )
 }
 
