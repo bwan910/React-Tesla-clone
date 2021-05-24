@@ -4,14 +4,15 @@ import Fade from 'react-reveal/Fade';
 
 // Section for categories in the homepage
 // Here it gets the data from Home.js where the information data are defined
-function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
+function Section({ title, description,descButton, leftBtnText, rightBtnText, backgroundImg }) {
     return (
         <Wrap bgImage={backgroundImg}>
             <Fade bottom>
                 <ItemText>
                     <h1>{title}</h1>
-                    <p>{description}</p>
+                    <p>{description} <a href="#">{descButton}</a></p>
                 </ItemText>
+
             </Fade>
             <Buttons>
                 {/*  Fade is the animation from react-reveal  */}
@@ -51,9 +52,15 @@ const Wrap = styled.div`
 `
 
 const ItemText = styled.div`
-    padding-top: 15vh;
+    padding-top: 17vh;
     text-align: center;
+
+    a{
+        color: black;
+        text-decoration: underline;
+    }
 `
+
 
 const ButtonGroup = styled.div`
     display:flex;
@@ -65,7 +72,6 @@ const ButtonGroup = styled.div`
 
 const LeftButton = styled.div`
     background-color: black;
-    // background-color: rgba(23,26,32,0.8);
     height: 40px;
     width: 256px;
     color: white;
