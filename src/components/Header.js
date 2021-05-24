@@ -25,7 +25,7 @@ function Header() {
             </Menu>
             {/* Right side menu */}
             <RightMenu>
-                <a href="/page">Shop</a>
+                <a href="#">Shop</a>
                 <a href="#">Tesla Account</a>
             </RightMenu>
             
