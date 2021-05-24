@@ -1,4 +1,5 @@
-This project was developed with React JS, React Redux, React styled-components
+This project was developed with React JS, React Redux, React styled-components.
+View demo here: https://bwan910-tesla-clone.vercel.app/
 
 ## Available Scripts
 
