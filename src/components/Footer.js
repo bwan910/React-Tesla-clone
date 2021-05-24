@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 function Footer() {
+
+    var dateObj = new Date();
+    var currentYear = dateObj.getFullYear();
+
     return (
         <>
             <FooterMenu>
-                <a href="#">Tesla @ 2021</a>
+                <a href="#">Tesla @ {currentYear}</a>
                 <a href="#">Privacy & Legal</a>
                 <a href="#">Contact</a>
                 <a href="#">Career</a>
@@ -17,7 +21,7 @@ function Footer() {
             </FooterMenu>
 
             <SmFooter>
-                <li><a href="#">Tesla @ 2021</a></li>
+                <li><a href="#">Tesla @ {currentYear}</a></li>
                 <li><a href="#">Privacy & Legal</a></li>
                 <li><a href="#">News</a></li>
 
