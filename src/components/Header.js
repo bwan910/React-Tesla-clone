@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Link, useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -6,31 +6,36 @@ import { selectCars } from '../features/car/carSlice'
 import { useSelector } from 'react-redux';
 
 function Header() {
+    // For the burgerbutton open close navbar button state
     const [burgerStatus, setBurgerStatus] = useState(false);
     const cars = useSelector(selectCars);
 
     return (
         <Container>
+            {/* logo */}
             <a>
                 <img src="/images/logo.svg"></img>
             </a>
+            {/* Menu items in the center */}
             <Menu>
                 {/* // Looping data from the redux carSlice.js  */}
-                {cars && cars.map((car, index) =>(
+                {cars && cars.map((car, index) => (
                     <a key={index} href="#">{car}</a>
-                 ))}
-             
-
+                ))}
             </Menu>
+            {/* Right side menu */}
             <RightMenu>
-                <a href="#">Shop</a>
+                <a href="/page">Shop</a>
                 <a href="#">Tesla Account</a>
-                <CustomMenu onClick={ () => setBurgerStatus(true)}/>
             </RightMenu>
+            
+            {/*The navbar burger button*/}
+            <BurgerButton onClick={() => setBurgerStatus(true)} />
 
+            {/* Items in burger navbar */}
             <BurgerNav show={burgerStatus}>
                 <CloseWrapper>
-                    <CustomClose  onClick={ () => setBurgerStatus(false)} />
+                    <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
 
                 <li><a href="#">Existing Inventory</a></li>
@@ -68,8 +73,9 @@ const Menu = styled.div`
 
 
     a{
-        font-weight: 600;
-        text-transformation: uppercase;
+        color: black;
+        text-transform: uppercase;
+        font-weight: 300;
         padding: 0 10px;
         flex-wrap: nowrap;
     }
@@ -81,17 +87,23 @@ const Menu = styled.div`
 const RightMenu = styled.div`
     display: flex;
     align-items:center;
+
     a{
-        font-weight: 600;
-        text-transformation: uppercase;
+        color: black;
+        font-weight: 300;
+        text-transform: uppercase;
         margin-right: 10px;
         flex-wrap: nowrap;
+    }
+
+    @media(max-width: 768px){
+        display: none;
     }
 
     
 `
 
-const CustomMenu = styled(MenuIcon)`
+const BurgerButton = styled(MenuIcon)`
     cursor: pointer;
 `
 
@@ -108,7 +120,7 @@ const BurgerNav = styled.div`
     display: flex;
     flex-direction: column;
     text-align: start;
-    transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
+    transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.2s;
 
     li{
